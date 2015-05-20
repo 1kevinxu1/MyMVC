@@ -37,5 +37,10 @@ module Phase2
         @already_built_response = true
       end
     end
+
+    def render(template_name)
+      contents = File.read("views/#{self.class.to_s.underscore}/#{template_name}.html.erb")
+      render_content(ERB.new(contents).result(binding), "text/html")
+    end
   end
 end
