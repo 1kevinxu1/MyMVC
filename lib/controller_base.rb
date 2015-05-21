@@ -249,6 +249,10 @@ module RailsLite
       routes.find { |route| route.matches?(req) }
     end
 
+    def resources(path)
+      
+    end
+
     # either throw 404 or call run on a matched route
     def run(req, res)
       route = match(req)
